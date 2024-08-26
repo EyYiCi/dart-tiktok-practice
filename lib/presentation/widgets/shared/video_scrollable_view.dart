@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok/config/domain/entities/video_post.dart';
+import 'package:tiktok/presentation/widgets/shared/video_buttons.dart';
 
 class VideoScrollableView extends StatelessWidget {
 
@@ -10,17 +11,23 @@ class VideoScrollableView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return PageView(
+    return PageView.builder(
+      scrollDirection: Axis.vertical,
       physics: const BouncingScrollPhysics(),
-      children: [
-        Container(color: Colors.red),
-        Container(color: Colors.blue),
-        Container(color: const Color.fromARGB(211, 185, 252, 2)),
-        Container(color: const Color.fromARGB(255, 5, 113, 139)),
-        Container(color: Colors.indigo),
-        Container(color: const Color.fromARGB(255, 146, 12, 224)),
+      itemCount: videos.length,
+      itemBuilder: (context, index) {
+        final VideoPost videoPost = videos[index];
 
-      ],
+        return Stack(
+          children:[
+
+            Positioned(
+              bottom: 40,
+              right: 20,
+              child: VideoButtons(video: videoPost))
+          ]
+          );
+      },
     );
   }
 }
