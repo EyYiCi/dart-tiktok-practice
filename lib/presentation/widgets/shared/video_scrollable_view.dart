@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tiktok/config/domain/entities/video_post.dart';
+import 'package:tiktok/domain/entities/video_post.dart';
 import 'package:tiktok/presentation/widgets/shared/video_buttons.dart';
 import 'package:tiktok/presentation/widgets/video/fullscreen_player.dart';
 

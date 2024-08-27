@@ -1,7 +1,7 @@
 
 
 
-import 'package:tiktok/config/domain/entities/video_post.dart';
+import 'package:tiktok/domain/entities/video_post.dart';
 
 class LocalVideoModel {
   final String name;
